@@ -30,7 +30,6 @@ VALUES
     
 -- 제약 키(FK)를 사용하게 된다면 여러가지 제약 사항이 생기게 된다.
 SELECT * FROM student;
-desc student;
 
 INSERT INTO student(student_id, student_name, grade, school_id)
 VALUE (6, '야수오', '1학년', 10);
@@ -87,3 +86,7 @@ CREATE TABLE `order`(
     product_id INT,
     FOREIGN KEY(product_id) REFERENCES product(id)
 );
+
+desc school;
+desc student;
+desc team;
