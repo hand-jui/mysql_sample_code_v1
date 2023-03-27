@@ -8,6 +8,8 @@ CREATE TABLE noticeBoard(
     password VARCHAR(10)
 );
 
+SELECT * FROM noticeboard where no = ?;
+
 SELECT no, title, nickname
 FROM noticeBoard;
 
