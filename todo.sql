@@ -17,7 +17,7 @@ CREATE TABLE TodoList (
 
 -- 카테고리 테이블(부모 테이블)
 -- id, 이름
-CREATE TABLE Category (
+CREATE TABLE category (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL
 );
@@ -28,5 +28,24 @@ ADD CONSTRAINT fk_category FOREIGN KEY(category_id) REFERENCES Category(id)
 ON UPDATE CASCADE
 ON DELETE CASCADE;
 
+SELECT * FROM category;
+DESC category;
+-- Category 샘플 데이터
+INSERT INTO Category(name) VALUE('운동');
+INSERT INTO Category(name) VALUE('공부');
+INSERT INTO Category(name) VALUE('연애');
+INSERT INTO Category(name) VALUE('집안일');
 
+UPDATE category SET name = '헬스' WHERE id = 1;
 
+DELETE FROM category WHERE id = 6;
+
+SELECT * FROM TodoList;
+DESC TodoList;
+
+-- TodoList 샘플 데이터
+INSERT INTO TodoList(title, description, priority, completed, category_id) VALUES("자바", "내가 씹어먹음", 1, 0, 7);
+
+UPDATE TodoList SET title = '자바', description = '내가 이김', priority = 1, completed = 0, createdAt = '', category_id = 7 WHERE id = 2;
+
+DELETE FROM TodoList WHERE id = 1;
