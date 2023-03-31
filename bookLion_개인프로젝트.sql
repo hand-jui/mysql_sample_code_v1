@@ -22,3 +22,22 @@ VALUE("jui", "8282", "손주이", "부산시 사상구", "010-6812-3812", "jui@h
 UPDATE user SET password = '9586', address = '부산시 사상구', phone='',email='',account='' WHERE id = '' AND password = '';
 
 DELETE FROM user WHERE id = '' AND password = '';
+
+drop table booklist;
+CREATE TABLE booklist(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    category VARCHAR(10) NOT NULL,
+    title VARCHAR(50) NOT NULL,
+    author VARCHAR(10) NOT NULL,
+    publisher VARCHAR(10) NOT NULL,
+    pubdate DATE NOT NULL,
+    price INT NOT NULL,
+    sale INT NOT NULL,
+    quantity INT NOT NULL
+);
+SELECT * FROM booklist;
+
+INSERT INTO booklist(category, title, author, publisher, pubdate, price, sale, quantity)
+VALUE ("","이노의 가르침", "세이노", "데이원", 20230302, 6480, 1,20);
+
+UPDATE booklist SET sale = '', quantity = '' WHERE title = '';
